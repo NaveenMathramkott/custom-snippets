@@ -34,21 +34,18 @@
   // Workbench & Window Styling
   "workbench.iconTheme": "vs-minimal",
   // "workbench.colorTheme": "Visual Studio Dark",
-  // "workbench.editor.tabSizing": "shrink",
+//   "workbench.editor.tabSizing": "shrink",
   "window.titleBarStyle": "custom",
-  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
-
-  //editor styling
-  "editor.formatOnSave": true,
+  "window.title": "NaveenMathramkott - ${dirty}${activeEditorShort}${separator}${rootName}",
   "editor.formatOnType": false,
   "editor.formatOnPaste": false,
-  "editor.wordWrap": "on",
+//   "editor.wordWrap": "on",
   "window.zoomLevel": 0,
-  "editor.fontFamily": "'Cascadia Code', monospace",
+  "editor.fontFamily": "'Comic Sans MS', monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 13,
-  "editor.lineHeight": 22,
-  "editor.letterSpacing": 0.1,
+  "editor.fontSize": 15,
+  "editor.lineHeight": 19,
+  "editor.letterSpacing": 1,
   "editor.cursorWidth": 3,
   "editor.cursorBlinking": "smooth",
   "editor.cursorStyle": "line",
@@ -57,19 +54,23 @@
   "editor.minimap.enabled": true,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.scale": 1,
-  "editor.renderWhitespace": "selection",
-  "editor.renderLineHighlight": "all",
+  "editor.renderWhitespace": "trailing",
+  "editor.renderLineHighlight": "gutter",
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
   "editor.linkedEditing": true,
   "editor.detectIndentation": false,
-  "editor.tabSize": 1,
+  "editor.tabSize": 10,
   "editor.insertSpaces": true,
-  "editor.fontWeight": "200",
+  "editor.fontWeight": "100",
   "files.autoSave": "off",
   // "files.autoSaveDelay": 1000,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": true,
+  "explorer.confirmDragAndDrop": true,
+  "explorer.decorations.colors": true,
+  "apc.parts.font.family":{
+          "sidebar":"Comic Sans MS"
+  } ,
 
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -84,35 +85,35 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // Terminal Customization
-  "terminal.integrated.fontFamily": "Firacode NF",
-  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "Cascadia Code",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight":0.5,
+  "terminal.integrated.letterSpacing":0.1,
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.cursorWidth":10,
   "terminal.integrated.env.windows": {
     "PSICON": "😁"
   },
   "react-native-tools.showUserTips": false,
   "javascript.validate.enable": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  // "[typescript]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.suggestionActions.enabled": true,
   "typescript.format.enable": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "liveServer.settings.donotShowInfoMsg": true,
   "jshint.enable": false,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.inlineSuggest.enabled": true,
   "prettier.useEditorConfig": false,
@@ -129,7 +130,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
-  // "workbench.colorTheme": "underdark-jungle",
+//   "workbench.colorTheme": "Default Dark Modern",
   "diffEditor.codeLens": true,
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#cdbc70",
@@ -215,5 +216,7 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.defaultFormatter": "esbenp.prettier-vscode"
 }
