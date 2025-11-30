@@ -1,45 +1,14 @@
-// {
-//   "git.autofetch": true,
-//   "[scss]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   },
-//   "[javascriptreact]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   },
-//   "notebook.formatOnSave.enabled": true,
-//   "editor.defaultFormatter": "esbenp.prettier-vscode",
-//   "editor.formatOnSave": true,
-//   "editor.formatOnPaste": true,
-//   "[prisma]": {
-//     "editor.defaultFormatter": "Prisma.prisma"
-//   },
-//   "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
-//   "terminal.integrated.env.windows": {},
-//   "console-ninja.featureSet": "Community",
-//   "prisma.showPrismaDataPlatformNotification": false,
-//   "editor.fontSize": 13,
-//   "debug.console.fontSize": 13,
-//   "terminal.integrated.fontSize": 12,
-//   "chat.editor.fontSize": 12,
-//   "workbench.iconTheme": "file-icons",
-//   "liveServer.settings.donotVerifyTags": true,
-//   "liveServer.settings.donotShowInfoMsg": true,
-//   "workbench.startupEditor": "readme",
-//   "terminal.integrated.cursorStyle": "line",
-//   "terminal.integrated.defaultProfile.windows": "Git Bash"
-// }
-
 {
   "git.autofetch": true,
   // Workbench & Window Styling
   "workbench.iconTheme": "vs-minimal",
   // "workbench.colorTheme": "Visual Studio Dark",
-//   "workbench.editor.tabSizing": "shrink",
+  // "workbench.editor.tabSizing": "shrink",
   "window.titleBarStyle": "custom",
   "window.title": "NaveenMathramkott - ${dirty}${activeEditorShort}${separator}${rootName}",
   "editor.formatOnType": false,
   "editor.formatOnPaste": false,
-//   "editor.wordWrap": "on",
+  // "editor.wordWrap": "on",
   "window.zoomLevel": 0,
   "editor.fontFamily": "'Comic Sans MS', monospace",
   "editor.fontLigatures": true,
