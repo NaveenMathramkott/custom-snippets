@@ -1,0 +1,740 @@
+{
+  // ==================== VARIABLES ====================
+  "SASS Variable": {
+    "prefix": "svar",
+    "body": [
+      "\\$${1:variable-name}: ${2:value};"
+    ],
+    "description": "SASS variable"
+  },
+  "SASS Color Variables": {
+    "prefix": "svarcol",
+    "body": [
+      "\\$primary: ${1:#007bff};",
+      "\\$secondary: ${2:#6c757d};",
+      "\\$success: ${3:#28a745};",
+      "\\$danger: ${4:#dc3545};",
+      "\\$warning: ${5:#ffc107};",
+      "\\$info: ${6:#17a2b8};",
+      "\\$light: ${7:#f8f9fa};",
+      "\\$dark: ${8:#343a40};"
+    ],
+    "description": "Color variables set"
+  },
+  "SASS Typography Variables": {
+    "prefix": "svartypo",
+    "body": [
+      "\\$font-primary: ${1:'Roboto', sans-serif};",
+      "\\$font-secondary: ${2:'Open Sans', sans-serif};",
+      "\\$font-size-base: ${3:16px};",
+      "\\$font-weight-normal: ${4:400};",
+      "\\$font-weight-bold: ${5:700};",
+      "\\$line-height-base: ${6:1.5};"
+    ],
+    "description": "Typography variables"
+  },
+  "SASS Spacing Variables": {
+    "prefix": "svarspace",
+    "body": [
+      "\\$spacing-xs: ${1:4px};",
+      "\\$spacing-sm: ${2:8px};",
+      "\\$spacing-md: ${3:16px};",
+      "\\$spacing-lg: ${4:24px};",
+      "\\$spacing-xl: ${5:32px};"
+    ],
+    "description": "Spacing variables"
+  },
+  "SASS Breakpoint Variables": {
+    "prefix": "svarbp",
+    "body": [
+      "\\$breakpoint-xs: ${1:320px};",
+      "\\$breakpoint-sm: ${2:576px};",
+      "\\$breakpoint-md: ${3:768px};",
+      "\\$breakpoint-lg: ${4:992px};",
+      "\\$breakpoint-xl: ${5:1200px};",
+      "\\$breakpoint-xxl: ${6:1400px};"
+    ],
+    "description": "Breakpoint variables"
+  },
+
+  // ==================== NESTING ====================
+  "SASS Nesting": {
+    "prefix": "snest",
+    "body": [
+      "${1:.parent} {",
+      "  ${2:property}: ${3:value};",
+      "  ",
+      "  ${4:.child} {",
+      "    $0",
+      "  }",
+      "}"
+    ],
+    "description": "SASS nesting"
+  },
+  "SASS Parent Selector": {
+    "prefix": "sand",
+    "body": [
+      "&${1::hover} {",
+      "  $0",
+      "}"
+    ],
+    "description": "Parent selector (&)"
+  },
+  "SASS BEM Nesting": {
+    "prefix": "sbem",
+    "body": [
+      ".${1:block} {",
+      "  $0",
+      "  ",
+      "  &__${2:element} {",
+      "    ",
+      "  }",
+      "  ",
+      "  &--${3:modifier} {",
+      "    ",
+      "  }",
+      "}"
+    ],
+    "description": "BEM nesting structure"
+  },
+
+  // ==================== MIXINS ====================
+  "SASS Mixin": {
+    "prefix": "smix",
+    "body": [
+      "@mixin ${1:mixin-name}(${2:\\$param}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "SASS mixin"
+  },
+  "SASS Mixin with Default": {
+    "prefix": "smixd",
+    "body": [
+      "@mixin ${1:mixin-name}(${2:\\$param}: ${3:default}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "SASS mixin with default parameter"
+  },
+  "SASS Include Mixin": {
+    "prefix": "sinc",
+    "body": [
+      "@include ${1:mixin-name}(${2:arguments});"
+    ],
+    "description": "Include mixin"
+  },
+  "Flexbox Mixin": {
+    "prefix": "smixflex",
+    "body": [
+      "@mixin flex(\\$direction: row, \\$justify: center, \\$align: center) {",
+      "  display: flex;",
+      "  flex-direction: \\$direction;",
+      "  justify-content: \\$justify;",
+      "  align-items: \\$align;",
+      "}"
+    ],
+    "description": "Flexbox mixin"
+  },
+  "Font Mixin": {
+    "prefix": "smixfont",
+    "body": [
+      "@mixin font(\\$size, \\$weight: 400, \\$line-height: 1.5) {",
+      "  font-size: \\$size;",
+      "  font-weight: \\$weight;",
+      "  line-height: \\$line-height;",
+      "}"
+    ],
+    "description": "Font mixin"
+  },
+  "Box Shadow Mixin": {
+    "prefix": "smixshadow",
+    "body": [
+      "@mixin box-shadow(\\$x: 0, \\$y: 2px, \\$blur: 8px, \\$color: rgba(0, 0, 0, 0.1)) {",
+      "  box-shadow: \\$x \\$y \\$blur \\$color;",
+      "}"
+    ],
+    "description": "Box shadow mixin"
+  },
+  "Transition Mixin": {
+    "prefix": "smixtrans",
+    "body": [
+      "@mixin transition(\\$properties: all, \\$duration: 0.3s, \\$easing: ease) {",
+      "  transition: \\$properties \\$duration \\$easing;",
+      "}"
+    ],
+    "description": "Transition mixin"
+  },
+  "Border Radius Mixin": {
+    "prefix": "smixbr",
+    "body": [
+      "@mixin border-radius(\\$radius: 4px) {",
+      "  border-radius: \\$radius;",
+      "}"
+    ],
+    "description": "Border radius mixin"
+  },
+  "Absolute Center Mixin": {
+    "prefix": "smixcenter",
+    "body": [
+      "@mixin absolute-center {",
+      "  position: absolute;",
+      "  top: 50%;",
+      "  left: 50%;",
+      "  transform: translate(-50%, -50%);",
+      "}"
+    ],
+    "description": "Absolute center mixin"
+  },
+  "Responsive Mixin": {
+    "prefix": "smixresp",
+    "body": [
+      "@mixin respond-to(\\$breakpoint) {",
+      "  @if \\$breakpoint == 'sm' {",
+      "    @media (min-width: 576px) { @content; }",
+      "  } @else if \\$breakpoint == 'md' {",
+      "    @media (min-width: 768px) { @content; }",
+      "  } @else if \\$breakpoint == 'lg' {",
+      "    @media (min-width: 992px) { @content; }",
+      "  } @else if \\$breakpoint == 'xl' {",
+      "    @media (min-width: 1200px) { @content; }",
+      "  }",
+      "}"
+    ],
+    "description": "Responsive breakpoint mixin"
+  },
+  "Truncate Mixin": {
+    "prefix": "smixtrunc",
+    "body": [
+      "@mixin truncate(\\$width: 100%) {",
+      "  width: \\$width;",
+      "  white-space: nowrap;",
+      "  overflow: hidden;",
+      "  text-overflow: ellipsis;",
+      "}"
+    ],
+    "description": "Text truncate mixin"
+  },
+  "Size Mixin": {
+    "prefix": "smixsize",
+    "body": [
+      "@mixin size(\\$width, \\$height: \\$width) {",
+      "  width: \\$width;",
+      "  height: \\$height;",
+      "}"
+    ],
+    "description": "Size mixin (width and height)"
+  },
+  "Pseudo Element Mixin": {
+    "prefix": "smixpseudo",
+    "body": [
+      "@mixin pseudo(\\$content: '') {",
+      "  content: \\$content;",
+      "  display: block;",
+      "  position: absolute;",
+      "}"
+    ],
+    "description": "Pseudo element mixin"
+  },
+
+  // ==================== FUNCTIONS ====================
+  "SASS Function": {
+    "prefix": "sfunc",
+    "body": [
+      "@function ${1:function-name}(${2:\\$param}) {",
+      "  @return ${3:value};",
+      "}"
+    ],
+    "description": "SASS function"
+  },
+  "Calculate REM Function": {
+    "prefix": "sfuncrem",
+    "body": [
+      "@function rem(\\$pixels, \\$base: 16px) {",
+      "  @return (\\$pixels / \\$base) * 1rem;",
+      "}"
+    ],
+    "description": "Convert pixels to rem"
+  },
+  "Calculate EM Function": {
+    "prefix": "sfuncem",
+    "body": [
+      "@function em(\\$pixels, \\$context: 16px) {",
+      "  @return (\\$pixels / \\$context) * 1em;",
+      "}"
+    ],
+    "description": "Convert pixels to em"
+  },
+  "Lighten Color Function": {
+    "prefix": "sfunclight",
+    "body": [
+      "lighten(${1:\\$color}, ${2:10%})"
+    ],
+    "description": "Lighten color"
+  },
+  "Darken Color Function": {
+    "prefix": "sfuncdark",
+    "body": [
+      "darken(${1:\\$color}, ${2:10%})"
+    ],
+    "description": "Darken color"
+  },
+  "Mix Colors Function": {
+    "prefix": "sfuncmix",
+    "body": [
+      "mix(${1:\\$color1}, ${2:\\$color2}, ${3:50%})"
+    ],
+    "description": "Mix two colors"
+  },
+
+  // ==================== EXTENDS & PLACEHOLDERS ====================
+  "SASS Extend": {
+    "prefix": "sext",
+    "body": [
+      "@extend ${1:.class};"
+    ],
+    "description": "Extend class"
+  },
+  "SASS Placeholder": {
+    "prefix": "splace",
+    "body": [
+      "%${1:placeholder-name} {",
+      "  $0",
+      "}"
+    ],
+    "description": "SASS placeholder selector"
+  },
+  "Extend Placeholder": {
+    "prefix": "sextp",
+    "body": [
+      "@extend %${1:placeholder-name};"
+    ],
+    "description": "Extend placeholder"
+  },
+
+  // ==================== CONTROL DIRECTIVES ====================
+  "SASS If": {
+    "prefix": "sif",
+    "body": [
+      "@if ${1:condition} {",
+      "  $0",
+      "}"
+    ],
+    "description": "SASS if statement"
+  },
+  "SASS If Else": {
+    "prefix": "sifelse",
+    "body": [
+      "@if ${1:condition} {",
+      "  $0",
+      "} @else {",
+      "  ",
+      "}"
+    ],
+    "description": "SASS if else statement"
+  },
+  "SASS If Else If": {
+    "prefix": "sifelseif",
+    "body": [
+      "@if ${1:condition} {",
+      "  $0",
+      "} @else if ${2:condition} {",
+      "  ",
+      "} @else {",
+      "  ",
+      "}"
+    ],
+    "description": "SASS if else if statement"
+  },
+  "SASS For Loop": {
+    "prefix": "sfor",
+    "body": [
+      "@for \\$${1:i} from ${2:1} through ${3:10} {",
+      "  $0",
+      "}"
+    ],
+    "description": "SASS for loop"
+  },
+  "SASS Each Loop": {
+    "prefix": "seach",
+    "body": [
+      "@each \\$${1:item} in ${2:\\$list} {",
+      "  $0",
+      "}"
+    ],
+    "description": "SASS each loop"
+  },
+  "SASS While Loop": {
+    "prefix": "swhile",
+    "body": [
+      "@while ${1:condition} {",
+      "  $0",
+      "}"
+    ],
+    "description": "SASS while loop"
+  },
+
+  // ==================== MAPS ====================
+  "SASS Map": {
+    "prefix": "smap",
+    "body": [
+      "\\$${1:map-name}: (",
+      "  ${2:key}: ${3:value},",
+      "  $0",
+      ");"
+    ],
+    "description": "SASS map"
+  },
+  "Map Get": {
+    "prefix": "smapget",
+    "body": [
+      "map-get(${1:\\$map}, ${2:key})"
+    ],
+    "description": "Get value from map"
+  },
+  "Map Has Key": {
+    "prefix": "smaphas",
+    "body": [
+      "map-has-key(${1:\\$map}, ${2:key})"
+    ],
+    "description": "Check if map has key"
+  },
+  "Map Merge": {
+    "prefix": "smapmerge",
+    "body": [
+      "map-merge(${1:\\$map1}, ${2:\\$map2})"
+    ],
+    "description": "Merge two maps"
+  },
+  "Map Each": {
+    "prefix": "smapeach",
+    "body": [
+      "@each \\$${1:key}, \\$${2:value} in ${3:\\$map} {",
+      "  $0",
+      "}"
+    ],
+    "description": "Iterate over map"
+  },
+  "Color Map": {
+    "prefix": "smapcolor",
+    "body": [
+      "\\$${1:colors}: (",
+      "  'primary': ${2:#007bff},",
+      "  'secondary': ${3:#6c757d},",
+      "  'success': ${4:#28a745},",
+      "  'danger': ${5:#dc3545},",
+      "  'warning': ${6:#ffc107},",
+      "  'info': ${7:#17a2b8}",
+      ");"
+    ],
+    "description": "Color map"
+  },
+  "Spacing Map": {
+    "prefix": "smapspace",
+    "body": [
+      "\\$${1:spacing}: (",
+      "  'xs': ${2:4px},",
+      "  'sm': ${3:8px},",
+      "  'md': ${4:16px},",
+      "  'lg': ${5:24px},",
+      "  'xl': ${6:32px}",
+      ");"
+    ],
+    "description": "Spacing map"
+  },
+
+  // ==================== LISTS ====================
+  "SASS List": {
+    "prefix": "slist",
+    "body": [
+      "\\$${1:list-name}: (${2:item1}, ${3:item2}, ${4:item3});"
+    ],
+    "description": "SASS list"
+  },
+  "List Length": {
+    "prefix": "slistlen",
+    "body": [
+      "length(${1:\\$list})"
+    ],
+    "description": "Get list length"
+  },
+  "List Nth": {
+    "prefix": "slistnth",
+    "body": [
+      "nth(${1:\\$list}, ${2:index})"
+    ],
+    "description": "Get nth item from list"
+  },
+  "List Append": {
+    "prefix": "slistapp",
+    "body": [
+      "append(${1:\\$list}, ${2:value})"
+    ],
+    "description": "Append to list"
+  },
+
+  // ==================== IMPORTS & PARTIALS ====================
+  "SASS Import": {
+    "prefix": "simp",
+    "body": [
+      "@import '${1:partial}';"
+    ],
+    "description": "SASS import"
+  },
+  "SASS Use": {
+    "prefix": "suse",
+    "body": [
+      "@use '${1:module}'${2: as ${3:*}};"
+    ],
+    "description": "SASS use (module system)"
+  },
+  "SASS Forward": {
+    "prefix": "sforward",
+    "body": [
+      "@forward '${1:module}';"
+    ],
+    "description": "SASS forward"
+  },
+
+  // ==================== MEDIA QUERIES ====================
+  "SASS Media Query": {
+    "prefix": "smq",
+    "body": [
+      "@media (${1:min-width}: ${2:768px}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Media query"
+  },
+  "SASS Media Query with Variable": {
+    "prefix": "smqvar",
+    "body": [
+      "@media (min-width: ${1:\\$breakpoint-md}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Media query with variable"
+  },
+  "SASS Responsive Include": {
+    "prefix": "sresp",
+    "body": [
+      "@include respond-to('${1:md}') {",
+      "  $0",
+      "}"
+    ],
+    "description": "Responsive mixin include"
+  },
+
+  // ==================== UTILITIES ====================
+  "SASS Debug": {
+    "prefix": "sdebug",
+    "body": [
+      "@debug ${1:value};"
+    ],
+    "description": "Debug statement"
+  },
+  "SASS Warn": {
+    "prefix": "swarn",
+    "body": [
+      "@warn '${1:message}';"
+    ],
+    "description": "Warning statement"
+  },
+  "SASS Error": {
+    "prefix": "serror",
+    "body": [
+      "@error '${1:message}';"
+    ],
+    "description": "Error statement"
+  },
+  "SASS Content": {
+    "prefix": "scont",
+    "body": [
+      "@content;"
+    ],
+    "description": "Content directive"
+  },
+
+  // ==================== INTERPOLATION ====================
+  "SASS Interpolation": {
+    "prefix": "sinterp",
+    "body": [
+      "#{${1:\\$variable}}"
+    ],
+    "description": "Variable interpolation"
+  },
+  "SASS Dynamic Class": {
+    "prefix": "sdynclass",
+    "body": [
+      ".${1:prefix}-#{${2:\\$variable}} {",
+      "  $0",
+      "}"
+    ],
+    "description": "Dynamic class with interpolation"
+  },
+
+  // ==================== COMMON PATTERNS ====================
+  "SASS Button Variants": {
+    "prefix": "sbtnvar",
+    "body": [
+      "\\$button-variants: (",
+      "  'primary': ${1:#007bff},",
+      "  'secondary': ${2:#6c757d},",
+      "  'success': ${3:#28a745},",
+      "  'danger': ${4:#dc3545}",
+      ");",
+      "",
+      "@each \\$variant, \\$color in \\$button-variants {",
+      "  .btn-#{\\$variant} {",
+      "    background-color: \\$color;",
+      "    ",
+      "    &:hover {",
+      "      background-color: darken(\\$color, 10%);",
+      "    }",
+      "  }",
+      "}"
+    ],
+    "description": "Generate button variants"
+  },
+  "SASS Spacing Utilities": {
+    "prefix": "sutil",
+    "body": [
+      "\\$spacings: (0, 4, 8, 16, 24, 32);",
+      "\\$directions: ('t': 'top', 'r': 'right', 'b': 'bottom', 'l': 'left');",
+      "",
+      "@each \\$space in \\$spacings {",
+      "  .m-#{\\$space} { margin: #{\\$space}px; }",
+      "  .p-#{\\$space} { padding: #{\\$space}px; }",
+      "  ",
+      "  @each \\$dir-key, \\$dir-value in \\$directions {",
+      "    .m#{\\$dir-key}-#{\\$space} { margin-#{\\$dir-value}: #{\\$space}px; }",
+      "    .p#{\\$dir-key}-#{\\$space} { padding-#{\\$dir-value}: #{\\$space}px; }",
+      "  }",
+      "}"
+    ],
+    "description": "Generate spacing utilities"
+  },
+  "SASS Grid System": {
+    "prefix": "sgrid",
+    "body": [
+      "\\$columns: 12;",
+      "\\$gutter: 16px;",
+      "",
+      ".container {",
+      "  max-width: 1200px;",
+      "  margin: 0 auto;",
+      "  padding: 0 \\$gutter;",
+      "}",
+      "",
+      ".row {",
+      "  display: flex;",
+      "  flex-wrap: wrap;",
+      "  margin: 0 (-\\$gutter / 2);",
+      "}",
+      "",
+      "@for \\$i from 1 through \\$columns {",
+      "  .col-#{\\$i} {",
+      "    flex: 0 0 percentage(\\$i / \\$columns);",
+      "    padding: 0 (\\$gutter / 2);",
+      "  }",
+      "}"
+    ],
+    "description": "Grid system generator"
+  },
+  "SASS Theme Generator": {
+    "prefix": "stheme",
+    "body": [
+      "\\$themes: (",
+      "  light: (",
+      "    background: #ffffff,",
+      "    text: #333333,",
+      "    primary: #007bff",
+      "  ),",
+      "  dark: (",
+      "    background: #1a1a1a,",
+      "    text: #ffffff,",
+      "    primary: #0056b3",
+      "  )",
+      ");",
+      "",
+      "@mixin themed() {",
+      "  @each \\$theme, \\$map in \\$themes {",
+      "    .theme-#{\\$theme} & {",
+      "      \\$theme-map: \\$map !global;",
+      "      @content;",
+      "      \\$theme-map: null !global;",
+      "    }",
+      "  }",
+      "}",
+      "",
+      "@function t(\\$key) {",
+      "  @return map-get(\\$theme-map, \\$key);",
+      "}"
+    ],
+    "description": "Theme system generator"
+  },
+  "SASS Z-Index Management": {
+    "prefix": "szindex",
+    "body": [
+      "\\$z-layers: (",
+      "  'modal': 1000,",
+      "  'dropdown': 900,",
+      "  'header': 800,",
+      "  'overlay': 700,",
+      "  'default': 1",
+      ");",
+      "",
+      "@function z(\\$layer) {",
+      "  @return map-get(\\$z-layers, \\$layer);",
+      "}"
+    ],
+    "description": "Z-index management system"
+  },
+  "SASS Typography Scale": {
+    "prefix": "stypo",
+    "body": [
+      "\\$type-scale: (",
+      "  'xs': 0.75rem,",
+      "  'sm': 0.875rem,",
+      "  'base': 1rem,",
+      "  'lg': 1.125rem,",
+      "  'xl': 1.25rem,",
+      "  '2xl': 1.5rem,",
+      "  '3xl': 1.875rem,",
+      "  '4xl': 2.25rem",
+      ");",
+      "",
+      "@each \\$size, \\$value in \\$type-scale {",
+      "  .text-#{\\$size} {",
+      "    font-size: \\$value;",
+      "  }",
+      "}"
+    ],
+    "description": "Typography scale generator"
+  },
+  "SASS Reset": {
+    "prefix": "sreset",
+    "body": [
+      "*,",
+      "*::before,",
+      "*::after {",
+      "  margin: 0;",
+      "  padding: 0;",
+      "  box-sizing: border-box;",
+      "}",
+      "",
+      "html {",
+      "  font-size: 16px;",
+      "  -webkit-font-smoothing: antialiased;",
+      "  -moz-osx-font-smoothing: grayscale;",
+      "}",
+      "",
+      "body {",
+      "  font-family: \\$font-primary;",
+      "  line-height: 1.5;",
+      "  color: \\$text-color;",
+      "}"
+    ],
+    "description": "SASS reset"
+  }
+}
