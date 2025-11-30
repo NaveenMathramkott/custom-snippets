@@ -1,0 +1,897 @@
+{
+  // ==================== FLEXBOX ====================
+  "Flexbox Container": {
+    "prefix": "fx",
+    "body": [
+      "display: flex;",
+      "justify-content: ${1:center};",
+      "align-items: ${2:center};"
+    ],
+    "description": "Flexbox container"
+  },
+  "Flexbox Column": {
+    "prefix": "fxc",
+    "body": [
+      "display: flex;",
+      "flex-direction: column;",
+      "justify-content: ${1:center};",
+      "align-items: ${2:center};"
+    ],
+    "description": "Flexbox column layout"
+  },
+  "Flexbox Row": {
+    "prefix": "fxr",
+    "body": [
+      "display: flex;",
+      "flex-direction: row;",
+      "justify-content: ${1:space-between};",
+      "align-items: ${2:center};"
+    ],
+    "description": "Flexbox row layout"
+  },
+  "Flexbox Center": {
+    "prefix": "fxcenter",
+    "body": [
+      "display: flex;",
+      "justify-content: center;",
+      "align-items: center;"
+    ],
+    "description": "Center content with flexbox"
+  },
+  "Flexbox Space Between": {
+    "prefix": "fxsb",
+    "body": [
+      "display: flex;",
+      "justify-content: space-between;",
+      "align-items: ${1:center};"
+    ],
+    "description": "Flexbox space between"
+  },
+  "Flex Wrap": {
+    "prefix": "fxw",
+    "body": [
+      "display: flex;",
+      "flex-wrap: wrap;",
+      "gap: ${1:16px};"
+    ],
+    "description": "Flexbox with wrap"
+  },
+  "Flex Item": {
+    "prefix": "fxi",
+    "body": [
+      "flex: ${1:1};",
+      "flex-shrink: ${2:0};",
+      "flex-basis: ${3:auto};"
+    ],
+    "description": "Flex item properties"
+  },
+
+  // ==================== GRID ====================
+  "Grid Container": {
+    "prefix": "grid",
+    "body": [
+      "display: grid;",
+      "grid-template-columns: ${1:repeat(3, 1fr)};",
+      "gap: ${2:16px};"
+    ],
+    "description": "CSS Grid container"
+  },
+  "Grid Auto Fill": {
+    "prefix": "gridaf",
+    "body": [
+      "display: grid;",
+      "grid-template-columns: repeat(auto-fill, minmax(${1:250px}, 1fr));",
+      "gap: ${2:16px};"
+    ],
+    "description": "Grid with auto-fill"
+  },
+  "Grid Auto Fit": {
+    "prefix": "gridafit",
+    "body": [
+      "display: grid;",
+      "grid-template-columns: repeat(auto-fit, minmax(${1:250px}, 1fr));",
+      "gap: ${2:16px};"
+    ],
+    "description": "Grid with auto-fit"
+  },
+  "Grid Template Areas": {
+    "prefix": "gridta",
+    "body": [
+      "display: grid;",
+      "grid-template-areas:",
+      "  '${1:header} ${1:header} ${1:header}'",
+      "  '${2:sidebar} ${3:main} ${3:main}'",
+      "  '${4:footer} ${4:footer} ${4:footer}';",
+      "gap: ${5:16px};"
+    ],
+    "description": "Grid with template areas"
+  },
+  "Grid Area": {
+    "prefix": "ga",
+    "body": [
+      "grid-area: ${1:name};"
+    ],
+    "description": "Grid area assignment"
+  },
+  "Grid Column": {
+    "prefix": "gcol",
+    "body": [
+      "grid-column: ${1:1} / ${2:3};"
+    ],
+    "description": "Grid column span"
+  },
+  "Grid Row": {
+    "prefix": "grow",
+    "body": [
+      "grid-row: ${1:1} / ${2:3};"
+    ],
+    "description": "Grid row span"
+  },
+
+  // ==================== POSITIONING ====================
+  "Position Absolute": {
+    "prefix": "posa",
+    "body": [
+      "position: absolute;",
+      "top: ${1:0};",
+      "left: ${2:0};"
+    ],
+    "description": "Position absolute"
+  },
+  "Position Relative": {
+    "prefix": "posr",
+    "body": [
+      "position: relative;"
+    ],
+    "description": "Position relative"
+  },
+  "Position Fixed": {
+    "prefix": "posf",
+    "body": [
+      "position: fixed;",
+      "top: ${1:0};",
+      "left: ${2:0};"
+    ],
+    "description": "Position fixed"
+  },
+  "Position Sticky": {
+    "prefix": "poss",
+    "body": [
+      "position: sticky;",
+      "top: ${1:0};"
+    ],
+    "description": "Position sticky"
+  },
+  "Center Absolute": {
+    "prefix": "center",
+    "body": [
+      "position: absolute;",
+      "top: 50%;",
+      "left: 50%;",
+      "transform: translate(-50%, -50%);"
+    ],
+    "description": "Center element with absolute positioning"
+  },
+  "Full Cover": {
+    "prefix": "cover",
+    "body": [
+      "position: absolute;",
+      "top: 0;",
+      "left: 0;",
+      "width: 100%;",
+      "height: 100%;"
+    ],
+    "description": "Full cover positioning"
+  },
+
+  // ==================== DIMENSIONS ====================
+  "Width Height": {
+    "prefix": "wh",
+    "body": [
+      "width: ${1:100px};",
+      "height: ${2:100px};"
+    ],
+    "description": "Width and height"
+  },
+  "Max Width Height": {
+    "prefix": "maxwh",
+    "body": [
+      "max-width: ${1:1200px};",
+      "max-height: ${2:auto};"
+    ],
+    "description": "Max width and height"
+  },
+  "Min Width Height": {
+    "prefix": "minwh",
+    "body": [
+      "min-width: ${1:320px};",
+      "min-height: ${2:auto};"
+    ],
+    "description": "Min width and height"
+  },
+  "Full Width": {
+    "prefix": "fw",
+    "body": [
+      "width: 100%;"
+    ],
+    "description": "Full width"
+  },
+  "Full Height": {
+    "prefix": "fh",
+    "body": [
+      "height: 100vh;"
+    ],
+    "description": "Full viewport height"
+  },
+  "Aspect Ratio": {
+    "prefix": "aspect",
+    "body": [
+      "aspect-ratio: ${1:16} / ${2:9};"
+    ],
+    "description": "Aspect ratio"
+  },
+
+  // ==================== SPACING ====================
+  "Margin": {
+    "prefix": "m",
+    "body": [
+      "margin: ${1:0};"
+    ],
+    "description": "Margin"
+  },
+  "Margin All Sides": {
+    "prefix": "ma",
+    "body": [
+      "margin: ${1:10px} ${2:20px} ${3:10px} ${4:20px};"
+    ],
+    "description": "Margin all sides"
+  },
+  "Margin Auto": {
+    "prefix": "mauto",
+    "body": [
+      "margin: ${1:0} auto;"
+    ],
+    "description": "Margin auto center"
+  },
+  "Padding": {
+    "prefix": "p",
+    "body": [
+      "padding: ${1:0};"
+    ],
+    "description": "Padding"
+  },
+  "Padding All Sides": {
+    "prefix": "pa",
+    "body": [
+      "padding: ${1:10px} ${2:20px} ${3:10px} ${4:20px};"
+    ],
+    "description": "Padding all sides"
+  },
+  "Gap": {
+    "prefix": "gap",
+    "body": [
+      "gap: ${1:16px};"
+    ],
+    "description": "Gap (for flex/grid)"
+  },
+
+  // ==================== TYPOGRAPHY ====================
+  "Font Family": {
+    "prefix": "ff",
+    "body": [
+      "font-family: ${1:'Arial'}, ${2:sans-serif};"
+    ],
+    "description": "Font family"
+  },
+  "Font Size": {
+    "prefix": "fs",
+    "body": [
+      "font-size: ${1:16px};"
+    ],
+    "description": "Font size"
+  },
+  "Font Weight": {
+    "prefix": "fw",
+    "body": [
+      "font-weight: ${1:400};"
+    ],
+    "description": "Font weight"
+  },
+  "Line Height": {
+    "prefix": "lh",
+    "body": [
+      "line-height: ${1:1.5};"
+    ],
+    "description": "Line height"
+  },
+  "Letter Spacing": {
+    "prefix": "ls",
+    "body": [
+      "letter-spacing: ${1:0.05em};"
+    ],
+    "description": "Letter spacing"
+  },
+  "Text Align": {
+    "prefix": "ta",
+    "body": [
+      "text-align: ${1:center};"
+    ],
+    "description": "Text align"
+  },
+  "Text Transform": {
+    "prefix": "tt",
+    "body": [
+      "text-transform: ${1:uppercase};"
+    ],
+    "description": "Text transform"
+  },
+  "Text Decoration": {
+    "prefix": "td",
+    "body": [
+      "text-decoration: ${1:none};"
+    ],
+    "description": "Text decoration"
+  },
+  "Text Overflow Ellipsis": {
+    "prefix": "ellipsis",
+    "body": [
+      "white-space: nowrap;",
+      "overflow: hidden;",
+      "text-overflow: ellipsis;"
+    ],
+    "description": "Text overflow ellipsis"
+  },
+  "Line Clamp": {
+    "prefix": "clamp",
+    "body": [
+      "display: -webkit-box;",
+      "-webkit-line-clamp: ${1:2};",
+      "-webkit-box-orient: vertical;",
+      "overflow: hidden;"
+    ],
+    "description": "Multi-line text clamp"
+  },
+
+  // ==================== COLORS & BACKGROUNDS ====================
+  "Color": {
+    "prefix": "c",
+    "body": [
+      "color: ${1:#000};"
+    ],
+    "description": "Text color"
+  },
+  "Background Color": {
+    "prefix": "bgc",
+    "body": [
+      "background-color: ${1:#fff};"
+    ],
+    "description": "Background color"
+  },
+  "Background Image": {
+    "prefix": "bgi",
+    "body": [
+      "background-image: url('${1:path/to/image.jpg}');",
+      "background-size: ${2:cover};",
+      "background-position: ${3:center};",
+      "background-repeat: ${4:no-repeat};"
+    ],
+    "description": "Background image"
+  },
+  "Linear Gradient": {
+    "prefix": "lg",
+    "body": [
+      "background: linear-gradient(${1:to right}, ${2:#fff}, ${3:#000});"
+    ],
+    "description": "Linear gradient"
+  },
+  "Radial Gradient": {
+    "prefix": "rg",
+    "body": [
+      "background: radial-gradient(${1:circle}, ${2:#fff}, ${3:#000});"
+    ],
+    "description": "Radial gradient"
+  },
+  "Opacity": {
+    "prefix": "op",
+    "body": [
+      "opacity: ${1:0.8};"
+    ],
+    "description": "Opacity"
+  },
+
+  // ==================== BORDERS ====================
+  "Border": {
+    "prefix": "bd",
+    "body": [
+      "border: ${1:1px} ${2:solid} ${3:#000};"
+    ],
+    "description": "Border"
+  },
+  "Border Radius": {
+    "prefix": "br",
+    "body": [
+      "border-radius: ${1:4px};"
+    ],
+    "description": "Border radius"
+  },
+  "Border Radius Full": {
+    "prefix": "brf",
+    "body": [
+      "border-radius: 50%;"
+    ],
+    "description": "Border radius full circle"
+  },
+  "Border All Sides": {
+    "prefix": "bda",
+    "body": [
+      "border-top: ${1:1px solid #000};",
+      "border-right: ${2:1px solid #000};",
+      "border-bottom: ${3:1px solid #000};",
+      "border-left: ${4:1px solid #000};"
+    ],
+    "description": "Border all sides"
+  },
+  "Outline": {
+    "prefix": "ol",
+    "body": [
+      "outline: ${1:1px} ${2:solid} ${3:#000};"
+    ],
+    "description": "Outline"
+  },
+  "Outline None": {
+    "prefix": "oln",
+    "body": [
+      "outline: none;"
+    ],
+    "description": "Remove outline"
+  },
+
+  // ==================== SHADOWS ====================
+  "Box Shadow": {
+    "prefix": "bs",
+    "body": [
+      "box-shadow: ${1:0} ${2:2px} ${3:8px} ${4:rgba(0, 0, 0, 0.1)};"
+    ],
+    "description": "Box shadow"
+  },
+  "Box Shadow Elevated": {
+    "prefix": "bse",
+    "body": [
+      "box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);"
+    ],
+    "description": "Elevated box shadow"
+  },
+  "Box Shadow Heavy": {
+    "prefix": "bsh",
+    "body": [
+      "box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);"
+    ],
+    "description": "Heavy box shadow"
+  },
+  "Text Shadow": {
+    "prefix": "ts",
+    "body": [
+      "text-shadow: ${1:2px} ${2:2px} ${3:4px} ${4:rgba(0, 0, 0, 0.3)};"
+    ],
+    "description": "Text shadow"
+  },
+  "Drop Shadow": {
+    "prefix": "ds",
+    "body": [
+      "filter: drop-shadow(${1:0} ${2:4px} ${3:8px} ${4:rgba(0, 0, 0, 0.2)});"
+    ],
+    "description": "Drop shadow filter"
+  },
+
+  // ==================== ANIMATIONS & TRANSITIONS ====================
+  "Transition": {
+    "prefix": "trs",
+    "body": [
+      "transition: ${1:all} ${2:0.3s} ${3:ease};"
+    ],
+    "description": "Transition"
+  },
+  "Transition Multiple": {
+    "prefix": "trsm",
+    "body": [
+      "transition: ${1:opacity} ${2:0.3s} ${3:ease}, ${4:transform} ${5:0.3s} ${6:ease};"
+    ],
+    "description": "Multiple transitions"
+  },
+  "Transform": {
+    "prefix": "tf",
+    "body": [
+      "transform: ${1:translate(0, 0)};"
+    ],
+    "description": "Transform"
+  },
+  "Transform Scale": {
+    "prefix": "tfs",
+    "body": [
+      "transform: scale(${1:1.1});"
+    ],
+    "description": "Transform scale"
+  },
+  "Transform Rotate": {
+    "prefix": "tfr",
+    "body": [
+      "transform: rotate(${1:45deg});"
+    ],
+    "description": "Transform rotate"
+  },
+  "Animation": {
+    "prefix": "anim",
+    "body": [
+      "animation: ${1:name} ${2:1s} ${3:ease} ${4:infinite};"
+    ],
+    "description": "Animation"
+  },
+  "Keyframes": {
+    "prefix": "kf",
+    "body": [
+      "@keyframes ${1:animationName} {",
+      "  0% {",
+      "    ${2:opacity: 0;}",
+      "  }",
+      "  100% {",
+      "    ${3:opacity: 1;}",
+      "  }",
+      "}"
+    ],
+    "description": "Keyframes animation"
+  },
+
+  // ==================== DISPLAY & VISIBILITY ====================
+  "Display": {
+    "prefix": "d",
+    "body": [
+      "display: ${1:block};"
+    ],
+    "description": "Display"
+  },
+  "Display None": {
+    "prefix": "dn",
+    "body": [
+      "display: none;"
+    ],
+    "description": "Display none"
+  },
+  "Visibility": {
+    "prefix": "v",
+    "body": [
+      "visibility: ${1:visible};"
+    ],
+    "description": "Visibility"
+  },
+  "Overflow": {
+    "prefix": "ov",
+    "body": [
+      "overflow: ${1:hidden};"
+    ],
+    "description": "Overflow"
+  },
+  "Overflow Scroll": {
+    "prefix": "ovs",
+    "body": [
+      "overflow-x: ${1:auto};",
+      "overflow-y: ${2:auto};"
+    ],
+    "description": "Overflow scroll"
+  },
+  "Object Fit": {
+    "prefix": "of",
+    "body": [
+      "object-fit: ${1:cover};"
+    ],
+    "description": "Object fit"
+  },
+
+  // ==================== CURSORS & INTERACTIONS ====================
+  "Cursor": {
+    "prefix": "cur",
+    "body": [
+      "cursor: ${1:pointer};"
+    ],
+    "description": "Cursor"
+  },
+  "User Select": {
+    "prefix": "us",
+    "body": [
+      "user-select: ${1:none};"
+    ],
+    "description": "User select"
+  },
+  "Pointer Events": {
+    "prefix": "pe",
+    "body": [
+      "pointer-events: ${1:none};"
+    ],
+    "description": "Pointer events"
+  },
+
+  // ==================== RESPONSIVE ====================
+  "Media Query": {
+    "prefix": "mq",
+    "body": [
+      "@media (${1:min-width}: ${2:768px}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Media query"
+  },
+  "Media Query Max Width": {
+    "prefix": "mqmax",
+    "body": [
+      "@media (max-width: ${1:768px}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Media query max width"
+  },
+  "Media Query Min Width": {
+    "prefix": "mqmin",
+    "body": [
+      "@media (min-width: ${1:768px}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Media query min width"
+  },
+  "Media Query Range": {
+    "prefix": "mqr",
+    "body": [
+      "@media (min-width: ${1:768px}) and (max-width: ${2:1024px}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Media query range"
+  },
+  "Container Query": {
+    "prefix": "cq",
+    "body": [
+      "@container (min-width: ${1:400px}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Container query"
+  },
+
+  // ==================== PSEUDO CLASSES ====================
+  "Hover": {
+    "prefix": "hov",
+    "body": [
+      "&:hover {",
+      "  $0",
+      "}"
+    ],
+    "description": "Hover state"
+  },
+  "Focus": {
+    "prefix": "foc",
+    "body": [
+      "&:focus {",
+      "  $0",
+      "}"
+    ],
+    "description": "Focus state"
+  },
+  "Active": {
+    "prefix": "act",
+    "body": [
+      "&:active {",
+      "  $0",
+      "}"
+    ],
+    "description": "Active state"
+  },
+  "Before": {
+    "prefix": "bef",
+    "body": [
+      "&::before {",
+      "  content: '${1:}';",
+      "  $0",
+      "}"
+    ],
+    "description": "Before pseudo element"
+  },
+  "After": {
+    "prefix": "aft",
+    "body": [
+      "&::after {",
+      "  content: '${1:}';",
+      "  $0",
+      "}"
+    ],
+    "description": "After pseudo element"
+  },
+  "Placeholder": {
+    "prefix": "ph",
+    "body": [
+      "&::placeholder {",
+      "  color: ${1:#999};",
+      "  $0",
+      "}"
+    ],
+    "description": "Placeholder styles"
+  },
+
+  // ==================== Z-INDEX & LAYERS ====================
+  "Z-Index": {
+    "prefix": "z",
+    "body": [
+      "z-index: ${1:1};"
+    ],
+    "description": "Z-index"
+  },
+
+  // ==================== FILTERS ====================
+  "Filter": {
+    "prefix": "fil",
+    "body": [
+      "filter: ${1:blur(5px)};"
+    ],
+    "description": "Filter"
+  },
+  "Backdrop Filter": {
+    "prefix": "bdf",
+    "body": [
+      "backdrop-filter: ${1:blur(10px)};"
+    ],
+    "description": "Backdrop filter"
+  },
+
+  // ==================== RESETS ====================
+  "Reset Box Sizing": {
+    "prefix": "reset",
+    "body": [
+      "* {",
+      "  margin: 0;",
+      "  padding: 0;",
+      "  box-sizing: border-box;",
+      "}"
+    ],
+    "description": "CSS reset"
+  },
+  "Box Sizing": {
+    "prefix": "bxz",
+    "body": [
+      "box-sizing: border-box;"
+    ],
+    "description": "Box sizing"
+  },
+
+  // ==================== COMMON PATTERNS ====================
+  "Card": {
+    "prefix": "card",
+    "body": [
+      "background: #fff;",
+      "border-radius: 8px;",
+      "padding: 24px;",
+      "box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);"
+    ],
+    "description": "Card component styles"
+  },
+  "Button": {
+    "prefix": "btn",
+    "body": [
+      "padding: ${1:12px 24px};",
+      "background-color: ${2:#007bff};",
+      "color: ${3:#fff};",
+      "border: none;",
+      "border-radius: ${4:4px};",
+      "cursor: pointer;",
+      "transition: all 0.3s ease;",
+      "",
+      "&:hover {",
+      "  background-color: ${5:#0056b3};",
+      "}"
+    ],
+    "description": "Button styles"
+  },
+  "Input": {
+    "prefix": "inp",
+    "body": [
+      "padding: ${1:10px 12px};",
+      "border: ${2:1px solid #ddd};",
+      "border-radius: ${3:4px};",
+      "font-size: ${4:14px};",
+      "transition: border-color 0.3s ease;",
+      "",
+      "&:focus {",
+      "  outline: none;",
+      "  border-color: ${5:#007bff};",
+      "}"
+    ],
+    "description": "Input field styles"
+  },
+  "Glassmorphism": {
+    "prefix": "glass",
+    "body": [
+      "background: rgba(255, 255, 255, 0.1);",
+      "backdrop-filter: blur(10px);",
+      "border: 1px solid rgba(255, 255, 255, 0.2);",
+      "border-radius: 16px;",
+      "box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+    ],
+    "description": "Glassmorphism effect"
+  },
+  "Truncate": {
+    "prefix": "trunc",
+    "body": [
+      "width: ${1:200px};",
+      "white-space: nowrap;",
+      "overflow: hidden;",
+      "text-overflow: ellipsis;"
+    ],
+    "description": "Truncate text"
+  },
+  "Scrollbar Custom": {
+    "prefix": "scroll",
+    "body": [
+      "&::-webkit-scrollbar {",
+      "  width: ${1:8px};",
+      "}",
+      "",
+      "&::-webkit-scrollbar-track {",
+      "  background: ${2:#f1f1f1};",
+      "}",
+      "",
+      "&::-webkit-scrollbar-thumb {",
+      "  background: ${3:#888};",
+      "  border-radius: ${4:4px};",
+      "}",
+      "",
+      "&::-webkit-scrollbar-thumb:hover {",
+      "  background: ${5:#555};",
+      "}"
+    ],
+    "description": "Custom scrollbar styles"
+  },
+  "No Select": {
+    "prefix": "nosel",
+    "body": [
+      "user-select: none;",
+      "-webkit-user-select: none;",
+      "-moz-user-select: none;",
+      "-ms-user-select: none;"
+    ],
+    "description": "Disable text selection"
+  },
+  "Smooth Scroll": {
+    "prefix": "smooth",
+    "body": [
+      "scroll-behavior: smooth;"
+    ],
+    "description": "Smooth scrolling"
+  },
+  "Hide Scrollbar": {
+    "prefix": "hidescroll",
+    "body": [
+      "scrollbar-width: none;",
+      "-ms-overflow-style: none;",
+      "",
+      "&::-webkit-scrollbar {",
+      "  display: none;",
+      "}"
+    ],
+    "description": "Hide scrollbar"
+  },
+  "CSS Variables": {
+    "prefix": "var",
+    "body": [
+      ":root {",
+      "  --${1:primary-color}: ${2:#007bff};",
+      "  --${3:secondary-color}: ${4:#6c757d};",
+      "  $0",
+      "}"
+    ],
+    "description": "CSS custom properties"
+  },
+  "Use Variable": {
+    "prefix": "usevar",
+    "body": [
+      "var(--${1:variable-name})"
+    ],
+    "description": "Use CSS variable"
+  }
+}
