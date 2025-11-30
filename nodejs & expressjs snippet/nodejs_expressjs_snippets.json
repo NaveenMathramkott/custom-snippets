@@ -1,0 +1,761 @@
+{
+  // ==================== NODE.JS CORE ====================
+  "Require Module": {
+    "prefix": "req",
+    "body": [
+      "const ${1:module} = require('${2:module}');"
+    ],
+    "description": "Require module"
+  },
+  "Require Path": {
+    "prefix": "reqpath",
+    "body": [
+      "const path = require('path');"
+    ],
+    "description": "Require path module"
+  },
+  "Require FS": {
+    "prefix": "reqfs",
+    "body": [
+      "const fs = require('fs');"
+    ],
+    "description": "Require fs module"
+  },
+  "Require FS Promises": {
+    "prefix": "reqfsp",
+    "body": [
+      "const fs = require('fs').promises;"
+    ],
+    "description": "Require fs promises"
+  },
+  "Require HTTP": {
+    "prefix": "reqhttp",
+    "body": [
+      "const http = require('http');"
+    ],
+    "description": "Require http module"
+  },
+  "Import ES6": {
+    "prefix": "imp",
+    "body": [
+      "import ${1:module} from '${2:module}';"
+    ],
+    "description": "ES6 import"
+  },
+  "Import Destructured": {
+    "prefix": "impd",
+    "body": [
+      "import { ${1:modules} } from '${2:module}';"
+    ],
+    "description": "ES6 destructured import"
+  },
+  "Export Default": {
+    "prefix": "expd",
+    "body": [
+      "export default ${1:name};"
+    ],
+    "description": "Export default"
+  },
+  "Export Named": {
+    "prefix": "expn",
+    "body": [
+      "export { ${1:name} };"
+    ],
+    "description": "Export named"
+  },
+  "Module Exports": {
+    "prefix": "mexp",
+    "body": [
+      "module.exports = ${1:name};"
+    ],
+    "description": "Module exports"
+  },
+  "Module Exports Object": {
+    "prefix": "mexpo",
+    "body": [
+      "module.exports = {",
+      "  ${1:property}: ${2:value},",
+      "  $0",
+      "};"
+    ],
+    "description": "Module exports object"
+  },
+
+  // ==================== NODE.JS FILE SYSTEM ====================
+  "Read File Async": {
+    "prefix": "nreadfile",
+    "body": [
+      "fs.readFile('${1:path}', '${2:utf8}', (err, data) => {",
+      "  if (err) {",
+      "    console.error('Error reading file:', err);",
+      "    return;",
+      "  }",
+      "  $0",
+      "});"
+    ],
+    "description": "Read file asynchronously"
+  },
+  "Read File Sync": {
+    "prefix": "nreadfilesync",
+    "body": [
+      "const ${1:data} = fs.readFileSync('${2:path}', '${3:utf8}');"
+    ],
+    "description": "Read file synchronously"
+  },
+  "Read File Promise": {
+    "prefix": "nreadfilep",
+    "body": [
+      "const ${1:data} = await fs.readFile('${2:path}', '${3:utf8}');"
+    ],
+    "description": "Read file with promises"
+  },
+  "Write File Async": {
+    "prefix": "nwritefile",
+    "body": [
+      "fs.writeFile('${1:path}', ${2:data}, (err) => {",
+      "  if (err) {",
+      "    console.error('Error writing file:', err);",
+      "    return;",
+      "  }",
+      "  $0",
+      "});"
+    ],
+    "description": "Write file asynchronously"
+  },
+  "Write File Promise": {
+    "prefix": "nwritefilep",
+    "body": [
+      "await fs.writeFile('${1:path}', ${2:data});"
+    ],
+    "description": "Write file with promises"
+  },
+  "Create Directory": {
+    "prefix": "nmkdir",
+    "body": [
+      "await fs.mkdir('${1:path}', { recursive: true });"
+    ],
+    "description": "Create directory"
+  },
+
+  // ==================== NODE.JS HTTP SERVER ====================
+  "Create HTTP Server": {
+    "prefix": "nserver",
+    "body": [
+      "const http = require('http');",
+      "",
+      "const server = http.createServer((req, res) => {",
+      "  res.writeHead(200, { 'Content-Type': 'text/plain' });",
+      "  res.end('Hello World');",
+      "});",
+      "",
+      "const PORT = ${1:3000};",
+      "server.listen(PORT, () => {",
+      "  console.log(`Server running on port \\${PORT}`);",
+      "});"
+    ],
+    "description": "Create basic HTTP server"
+  },
+
+  // ==================== EXPRESS.JS SETUP ====================
+  "Express App Setup": {
+    "prefix": "exapp",
+    "body": [
+      "const express = require('express');",
+      "const app = express();",
+      "",
+      "app.use(express.json());",
+      "app.use(express.urlencoded({ extended: true }));",
+      "",
+      "const PORT = process.env.PORT || ${1:3000};",
+      "",
+      "app.listen(PORT, () => {",
+      "  console.log(`Server is running on port \\${PORT}`);",
+      "});"
+    ],
+    "description": "Express app setup"
+  },
+  "Express App with Routes": {
+    "prefix": "exappfull",
+    "body": [
+      "const express = require('express');",
+      "const app = express();",
+      "",
+      "// Middleware",
+      "app.use(express.json());",
+      "app.use(express.urlencoded({ extended: true }));",
+      "",
+      "// Routes",
+      "app.get('/', (req, res) => {",
+      "  res.json({ message: 'Welcome to the API' });",
+      "});",
+      "",
+      "// Error handling middleware",
+      "app.use((err, req, res, next) => {",
+      "  console.error(err.stack);",
+      "  res.status(500).json({ error: 'Something went wrong!' });",
+      "});",
+      "",
+      "const PORT = process.env.PORT || ${1:3000};",
+      "",
+      "app.listen(PORT, () => {",
+      "  console.log(`Server is running on port \\${PORT}`);",
+      "});"
+    ],
+    "description": "Complete Express app setup"
+  },
+
+  // ==================== EXPRESS ROUTES ====================
+  "Express GET Route": {
+    "prefix": "exget",
+    "body": [
+      "app.get('${1:/path}', (req, res) => {",
+      "  $0",
+      "});"
+    ],
+    "description": "Express GET route"
+  },
+  "Express POST Route": {
+    "prefix": "expost",
+    "body": [
+      "app.post('${1:/path}', (req, res) => {",
+      "  $0",
+      "});"
+    ],
+    "description": "Express POST route"
+  },
+  "Express PUT Route": {
+    "prefix": "exput",
+    "body": [
+      "app.put('${1:/path}', (req, res) => {",
+      "  $0",
+      "});"
+    ],
+    "description": "Express PUT route"
+  },
+  "Express PATCH Route": {
+    "prefix": "expatch",
+    "body": [
+      "app.patch('${1:/path}', (req, res) => {",
+      "  $0",
+      "});"
+    ],
+    "description": "Express PATCH route"
+  },
+  "Express DELETE Route": {
+    "prefix": "exdel",
+    "body": [
+      "app.delete('${1:/path}', (req, res) => {",
+      "  $0",
+      "});"
+    ],
+    "description": "Express DELETE route"
+  },
+  "Express Async Route": {
+    "prefix": "exasync",
+    "body": [
+      "app.${1:get}('${2:/path}', async (req, res) => {",
+      "  try {",
+      "    $0",
+      "  } catch (error) {",
+      "    console.error(error);",
+      "    res.status(500).json({ error: 'Internal server error' });",
+      "  }",
+      "});"
+    ],
+    "description": "Express async route with error handling"
+  },
+  "Express Route with Params": {
+    "prefix": "exparams",
+    "body": [
+      "app.${1:get}('${2:/path}/:${3:id}', (req, res) => {",
+      "  const { ${3:id} } = req.params;",
+      "  $0",
+      "});"
+    ],
+    "description": "Express route with parameters"
+  },
+
+  // ==================== EXPRESS ROUTER ====================
+  "Express Router": {
+    "prefix": "exrouter",
+    "body": [
+      "const express = require('express');",
+      "const router = express.Router();",
+      "",
+      "router.get('/', (req, res) => {",
+      "  $0",
+      "});",
+      "",
+      "module.exports = router;"
+    ],
+    "description": "Express router"
+  },
+  "Express Router Full": {
+    "prefix": "exrouterfull",
+    "body": [
+      "const express = require('express');",
+      "const router = express.Router();",
+      "",
+      "// GET all",
+      "router.get('/', async (req, res) => {",
+      "  try {",
+      "    $0",
+      "    res.json({ data: [] });",
+      "  } catch (error) {",
+      "    res.status(500).json({ error: error.message });",
+      "  }",
+      "});",
+      "",
+      "// GET by ID",
+      "router.get('/:id', async (req, res) => {",
+      "  try {",
+      "    const { id } = req.params;",
+      "    res.json({ data: {} });",
+      "  } catch (error) {",
+      "    res.status(500).json({ error: error.message });",
+      "  }",
+      "});",
+      "",
+      "// POST create",
+      "router.post('/', async (req, res) => {",
+      "  try {",
+      "    const data = req.body;",
+      "    res.status(201).json({ data: {} });",
+      "  } catch (error) {",
+      "    res.status(500).json({ error: error.message });",
+      "  }",
+      "});",
+      "",
+      "// PUT update",
+      "router.put('/:id', async (req, res) => {",
+      "  try {",
+      "    const { id } = req.params;",
+      "    const data = req.body;",
+      "    res.json({ data: {} });",
+      "  } catch (error) {",
+      "    res.status(500).json({ error: error.message });",
+      "  }",
+      "});",
+      "",
+      "// DELETE",
+      "router.delete('/:id', async (req, res) => {",
+      "  try {",
+      "    const { id } = req.params;",
+      "    res.json({ message: 'Deleted successfully' });",
+      "  } catch (error) {",
+      "    res.status(500).json({ error: error.message });",
+      "  }",
+      "});",
+      "",
+      "module.exports = router;"
+    ],
+    "description": "Complete Express CRUD router"
+  },
+
+  // ==================== EXPRESS MIDDLEWARE ====================
+  "Express Middleware": {
+    "prefix": "exmw",
+    "body": [
+      "const ${1:middlewareName} = (req, res, next) => {",
+      "  $0",
+      "  next();",
+      "};"
+    ],
+    "description": "Express middleware"
+  },
+  "Express Async Middleware": {
+    "prefix": "exmwa",
+    "body": [
+      "const ${1:middlewareName} = async (req, res, next) => {",
+      "  try {",
+      "    $0",
+      "    next();",
+      "  } catch (error) {",
+      "    next(error);",
+      "  }",
+      "};"
+    ],
+    "description": "Express async middleware"
+  },
+  "Express Error Middleware": {
+    "prefix": "exerr",
+    "body": [
+      "app.use((err, req, res, next) => {",
+      "  console.error(err.stack);",
+      "  res.status(err.status || 500).json({",
+      "    error: {",
+      "      message: err.message || 'Internal Server Error'",
+      "    }",
+      "  });",
+      "});"
+    ],
+    "description": "Express error handling middleware"
+  },
+  "Express CORS Middleware": {
+    "prefix": "excors",
+    "body": [
+      "app.use((req, res, next) => {",
+      "  res.header('Access-Control-Allow-Origin', '*');",
+      "  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');",
+      "  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');",
+      "  next();",
+      "});"
+    ],
+    "description": "Express CORS middleware"
+  },
+  "Express Logger Middleware": {
+    "prefix": "exlogger",
+    "body": [
+      "const logger = (req, res, next) => {",
+      "  console.log(`[\\${new Date().toISOString()}] \\${req.method} \\${req.url}`);",
+      "  next();",
+      "};",
+      "",
+      "app.use(logger);"
+    ],
+    "description": "Express logger middleware"
+  },
+  "Express Auth Middleware": {
+    "prefix": "exauth",
+    "body": [
+      "const authenticate = (req, res, next) => {",
+      "  const token = req.headers.authorization?.split(' ')[1];",
+      "  ",
+      "  if (!token) {",
+      "    return res.status(401).json({ error: 'No token provided' });",
+      "  }",
+      "  ",
+      "  try {",
+      "    // Verify token here",
+      "    $0",
+      "    next();",
+      "  } catch (error) {",
+      "    res.status(401).json({ error: 'Invalid token' });",
+      "  }",
+      "};"
+    ],
+    "description": "Express authentication middleware"
+  },
+
+  // ==================== EXPRESS RESPONSES ====================
+  "Express JSON Response": {
+    "prefix": "exjson",
+    "body": [
+      "res.json({ ${1:data}: ${2:value} });"
+    ],
+    "description": "Express JSON response"
+  },
+  "Express Status Response": {
+    "prefix": "exstatus",
+    "body": [
+      "res.status(${1:200}).json({ ${2:message}: '${3:Success}' });"
+    ],
+    "description": "Express status response"
+  },
+  "Express Error Response": {
+    "prefix": "exerror",
+    "body": [
+      "res.status(${1:400}).json({ error: '${2:Error message}' });"
+    ],
+    "description": "Express error response"
+  },
+  "Express Send File": {
+    "prefix": "exsendfile",
+    "body": [
+      "res.sendFile(path.join(__dirname, '${1:public}', '${2:index.html}'));"
+    ],
+    "description": "Express send file"
+  },
+  "Express Redirect": {
+    "prefix": "exredir",
+    "body": [
+      "res.redirect(${1:301}, '${2:/path}');"
+    ],
+    "description": "Express redirect"
+  },
+
+  // ==================== EXPRESS STATIC FILES ====================
+  "Express Static Files": {
+    "prefix": "exstatic",
+    "body": [
+      "app.use(express.static(path.join(__dirname, '${1:public}')));"
+    ],
+    "description": "Serve static files"
+  },
+
+  // ==================== MONGOOSE ====================
+  "Mongoose Connect": {
+    "prefix": "mgconnect",
+    "body": [
+      "const mongoose = require('mongoose');",
+      "",
+      "mongoose.connect('${1:mongodb://localhost:27017/dbname}', {",
+      "  useNewUrlParser: true,",
+      "  useUnifiedTopology: true",
+      "})",
+      ".then(() => console.log('MongoDB connected'))",
+      ".catch(err => console.error('MongoDB connection error:', err));"
+    ],
+    "description": "Mongoose connect"
+  },
+  "Mongoose Schema": {
+    "prefix": "mgschema",
+    "body": [
+      "const mongoose = require('mongoose');",
+      "",
+      "const ${1:Schema}Schema = new mongoose.Schema({",
+      "  ${2:field}: {",
+      "    type: ${3:String},",
+      "    required: ${4:true}",
+      "  }",
+      "}, {",
+      "  timestamps: true",
+      "});",
+      "",
+      "module.exports = mongoose.model('${1:Schema}', ${1:Schema}Schema);"
+    ],
+    "description": "Mongoose schema"
+  },
+  "Mongoose Model": {
+    "prefix": "mgmodel",
+    "body": [
+      "const ${1:Model} = require('./${2:model}');",
+      "",
+      "// Find all",
+      "const ${3:items} = await ${1:Model}.find();",
+      "",
+      "// Find by ID",
+      "const ${4:item} = await ${1:Model}.findById(${5:id});",
+      "",
+      "// Create",
+      "const new${1:Model} = new ${1:Model}(${6:data});",
+      "await new${1:Model}.save();",
+      "",
+      "// Update",
+      "await ${1:Model}.findByIdAndUpdate(${5:id}, ${6:data}, { new: true });",
+      "",
+      "// Delete",
+      "await ${1:Model}.findByIdAndDelete(${5:id});"
+    ],
+    "description": "Mongoose model operations"
+  },
+
+  // ==================== JWT ====================
+  "JWT Sign": {
+    "prefix": "jwtsign",
+    "body": [
+      "const jwt = require('jsonwebtoken');",
+      "",
+      "const token = jwt.sign(",
+      "  { ${1:userId}: ${2:user.id} },",
+      "  process.env.JWT_SECRET,",
+      "  { expiresIn: '${3:1h}' }",
+      ");"
+    ],
+    "description": "JWT sign token"
+  },
+  "JWT Verify": {
+    "prefix": "jwtverify",
+    "body": [
+      "const jwt = require('jsonwebtoken');",
+      "",
+      "try {",
+      "  const decoded = jwt.verify(${1:token}, process.env.JWT_SECRET);",
+      "  $0",
+      "} catch (error) {",
+      "  console.error('Invalid token:', error);",
+      "}"
+    ],
+    "description": "JWT verify token"
+  },
+
+  // ==================== BCRYPT ====================
+  "Bcrypt Hash Password": {
+    "prefix": "bchash",
+    "body": [
+      "const bcrypt = require('bcryptjs');",
+      "",
+      "const salt = await bcrypt.genSalt(${1:10});",
+      "const ${2:hashedPassword} = await bcrypt.hash(${3:password}, salt);"
+    ],
+    "description": "Bcrypt hash password"
+  },
+  "Bcrypt Compare Password": {
+    "prefix": "bccompare",
+    "body": [
+      "const bcrypt = require('bcryptjs');",
+      "",
+      "const ${1:isMatch} = await bcrypt.compare(${2:password}, ${3:hashedPassword});"
+    ],
+    "description": "Bcrypt compare password"
+  },
+
+  // ==================== DOTENV ====================
+  "Dotenv Config": {
+    "prefix": "dotenv",
+    "body": [
+      "require('dotenv').config();"
+    ],
+    "description": "Load environment variables"
+  },
+  "Dotenv with Path": {
+    "prefix": "dotenvpath",
+    "body": [
+      "require('dotenv').config({ path: '${1:.env}' });"
+    ],
+    "description": "Load environment variables with path"
+  },
+
+  // ==================== PROCESS ====================
+  "Process Environment": {
+    "prefix": "penv",
+    "body": [
+      "process.env.${1:VARIABLE_NAME}"
+    ],
+    "description": "Access environment variable"
+  },
+  "Process Exit": {
+    "prefix": "pexit",
+    "body": [
+      "process.exit(${1:0});"
+    ],
+    "description": "Exit process"
+  },
+
+  // ==================== ASYNC HANDLER ====================
+  "Async Handler Wrapper": {
+    "prefix": "asynchandler",
+    "body": [
+      "const asyncHandler = (fn) => (req, res, next) => {",
+      "  Promise.resolve(fn(req, res, next)).catch(next);",
+      "};"
+    ],
+    "description": "Async handler wrapper"
+  },
+  "Use Async Handler": {
+    "prefix": "useasync",
+    "body": [
+      "asyncHandler(async (req, res) => {",
+      "  $0",
+      "})"
+    ],
+    "description": "Use async handler"
+  },
+
+  // ==================== VALIDATION ====================
+  "Express Validator": {
+    "prefix": "exvalidate",
+    "body": [
+      "const { body, validationResult } = require('express-validator');",
+      "",
+      "app.post('${1:/path}',",
+      "  [",
+      "    body('${2:field}').${3:notEmpty}().withMessage('${4:Field is required}'),",
+      "  ],",
+      "  (req, res) => {",
+      "    const errors = validationResult(req);",
+      "    if (!errors.isEmpty()) {",
+      "      return res.status(400).json({ errors: errors.array() });",
+      "    }",
+      "    $0",
+      "  }",
+      ");"
+    ],
+    "description": "Express validator middleware"
+  },
+
+  // ==================== MULTER (FILE UPLOAD) ====================
+  "Multer Setup": {
+    "prefix": "multer",
+    "body": [
+      "const multer = require('multer');",
+      "",
+      "const storage = multer.diskStorage({",
+      "  destination: (req, file, cb) => {",
+      "    cb(null, '${1:uploads/}');",
+      "  },",
+      "  filename: (req, file, cb) => {",
+      "    cb(null, Date.now() + '-' + file.originalname);",
+      "  }",
+      "});",
+      "",
+      "const upload = multer({ storage });"
+    ],
+    "description": "Multer file upload setup"
+  },
+  "Multer Single File": {
+    "prefix": "multersingle",
+    "body": [
+      "app.post('${1:/upload}', upload.single('${2:file}'), (req, res) => {",
+      "  const file = req.file;",
+      "  $0",
+      "});"
+    ],
+    "description": "Multer single file upload"
+  },
+
+  // ==================== LOGGING ====================
+  "Morgan Logger": {
+    "prefix": "morgan",
+    "body": [
+      "const morgan = require('morgan');",
+      "",
+      "app.use(morgan('${1:dev}'));"
+    ],
+    "description": "Morgan logger middleware"
+  },
+
+  // ==================== NODEMAILER ====================
+  "Nodemailer Setup": {
+    "prefix": "nodemailer",
+    "body": [
+      "const nodemailer = require('nodemailer');",
+      "",
+      "const transporter = nodemailer.createTransport({",
+      "  service: '${1:gmail}',",
+      "  auth: {",
+      "    user: process.env.EMAIL_USER,",
+      "    pass: process.env.EMAIL_PASSWORD",
+      "  }",
+      "});",
+      "",
+      "const mailOptions = {",
+      "  from: process.env.EMAIL_USER,",
+      "  to: '${2:recipient@example.com}',",
+      "  subject: '${3:Subject}',",
+      "  text: '${4:Email body}'",
+      "};",
+      "",
+      "transporter.sendMail(mailOptions, (error, info) => {",
+      "  if (error) {",
+      "    console.error('Error sending email:', error);",
+      "  } else {",
+      "    console.log('Email sent:', info.response);",
+      "  }",
+      "});"
+    ],
+    "description": "Nodemailer email setup"
+  },
+
+  // ==================== AXIOS (HTTP REQUESTS) ====================
+  "Axios GET Request": {
+    "prefix": "axiosget",
+    "body": [
+      "const axios = require('axios');",
+      "",
+      "const { data } = await axios.get('${1:url}');"
+    ],
+    "description": "Axios GET request"
+  },
+  "Axios POST Request": {
+    "prefix": "axiospost",
+    "body": [
+      "const axios = require('axios');",
+      "",
+      "const { data } = await axios.post('${1:url}', {",
+      "  ${2:key}: ${3:value}",
+      "});"
+    ],
+    "description": "Axios POST request"
+  }
+}
