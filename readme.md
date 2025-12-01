@@ -204,10 +204,4 @@ PRs are welcome!
 
 ---
 
-## 📜 License
-
-MIT License
-
----
-
 ## **Happy Coding...**
